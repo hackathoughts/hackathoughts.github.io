@@ -1,0 +1,7 @@
+title: Hackathoughts
+url: "http://theycallmezeal.me" # the base hostname & protocol for your site
+twitter_username: theycallmezeal
+github_username:  theycallmezeal
+
+# Build settings
+markdown: kramdown
