@@ -40,13 +40,27 @@ Vue.createApp({
         };
     },
     computed: {
-        visibleTips: function () {
+        visibleTips: function() {
             var visibleTags = this.visibleTags;
             return this.tips.filter(function(tip) {
                 return tip.tags.some(tag => visibleTags.includes(tag));
             }).sort(
                 (a, b) => b.date - a.date // most recent first
             );
+        },
+    },
+    methods: {
+        showAll: function () {
+            this.showNone();
+            for (i in this.tags) {
+                this.visibleTags.push(this.tags[i]);
+            }
+        },
+        showNone: function() {
+            console.log('showNone');
+            while (this.visibleTags.length > 0) {
+                this.visibleTags.pop();
+            }
         }
     }
 }).mount("#container");
