@@ -10,13 +10,13 @@ title: Tips
             <p id="page-nav-link"><a href="{% link submit.html %}">About / Submit</a></p>
         </div>
         <h2 id="tag-label">Tags</h1>
+        <button class="checkbox-control" v-on:click="showAll()">Show All</button>&nbsp;|&nbsp;<button class="checkbox-control" v-on:click="showNone()">Show None</button>
         <div id="tag-checkboxes">
             <div v-for="tag in tags" class="tag-checkbox">
                 <input type="checkbox" v-bind:id="'checkbox-' + tag" v-bind:value="tag" v-model="visibleTags">
                 <label v-bind:for="'checkbox-' + tag">[[ tag ]]</label>
             </div>
         </div>
-        <button v-on:click="showAll()">Show All</button> <button v-on:click="showNone()">Show None</button>
     </div>
 
     <main>
